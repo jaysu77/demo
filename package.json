@@ -4,7 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --mode development --open --hot"
+    "start": "webpack-dev-server --mode development --open --hot",
+    "test": "mocha test_helper.js test",
+    "build": "rimraf dist/ && webpack --config webpack.config.js --mode production",
+    "lint": "eslint src",
+    "check": "npm run lint && cross-env NODE_ENV=test nyc npm test",
+    "prepack": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -32,6 +37,7 @@
     "babel-loader": "^9.1.2",
     "css-loader": "^6.7.3",
     "html-webpack-plugin": "^5.5.0",
+    "mocha": "^10.2.0",
     "style-loader": "^3.3.2",
     "webpack": "^5.76.0",
     "webpack-cli": "^5.0.2",

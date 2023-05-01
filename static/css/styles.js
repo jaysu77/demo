@@ -43,7 +43,11 @@ export const styles = {
     },
   },
   sortButton: {
-    color: "white",
+    color: "red",
+    backgroundColor: "black",
+    "&:hover": {
+      backgroundColor: "black",
+    },
     margin: theme.spacing(1),
     [theme.breakpoints.up("sm")]: {
       margin: theme.spacing(2),
